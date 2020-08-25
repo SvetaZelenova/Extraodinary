@@ -1,0 +1,218 @@
+main {
+    margin-left: 9vh;
+    margin-top: $header-height-xxl;
+    padding: 1rem;
+
+    @media screen and (min-height: 800px) and (max-width: $desktop-large) {
+        margin-left: 6vh;
+    }
+    @media screen and (max-width: $desktop-large) {
+        margin-top: $header-height-xl;
+    }
+}
+
+.cards {
+    column-count: 3;
+    column-gap: 10px;
+    counter-reset: item-counter;
+
+    @media screen and (max-width: $tablet) {
+        column-count: 2;
+    }
+
+    @media screen and (max-width: $mobile-portrait) {
+        column-count: 1;
+    }
+}
+
+.card-item {
+    break-inside: avoid;
+    border: $card-border;
+    margin-bottom: 2%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+    }
+    &__adv {
+        padding: 5px;
+    }
+    &__photography {
+        &:after {
+            background-color: $camera;
+        }
+        .wrapper-img__hover {
+            background-color: rgba(46, 179, 152, 0.65);
+        }
+    }
+    &__music {
+        &:after {
+            background-color: $music;
+        }
+        .wrapper-img__hover {
+            background-color: rgba(231, 96, 73, 0.65);
+        }
+    }
+    &__cinema {
+        &:after {
+            background-color: $video;
+        }
+        .wrapper-img__hover {
+            background-color: rgba(144, 137, 156, 0.65);
+        }
+    }
+    &__business {
+        &:after {
+            background-color: $business;
+        }
+        .wrapper-img__hover {
+            background-color: rgba(86, 146, 177, 0.65);
+        }
+    }
+    &__graphic {
+        &:after {
+            background-color: $palette;
+        }
+        .wrapper-img__hover {
+            background-color: rgba(20, 185, 214, 0.65);
+        }
+    }
+
+    &:not(.card-item__adv) {
+        .wrapper-img:hover img {
+            transform: scale(1.2);
+        }
+    }
+}
+.wrapper-img {
+    margin: -1px;
+    position: relative;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: all 300ms ease-in-out;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid white;
+        left: 45px;
+        bottom: 0;
+    }
+    .wrapper-img__hover {
+        opacity: 0;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        transition: all 0.3s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &:hover .wrapper-img__hover {
+        opacity: 1;
+
+        .wrapper-img__more-btn {
+            opacity: 1;
+        }
+    }
+}
+.wrapper-img__more-btn {
+    color: white;
+    text-transform: uppercase;
+    border: 5px solid white;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    
+    span {
+        display: inline-block;
+        padding: 20px;
+    }
+    span:first-child {
+        font-size: 0.6rem;
+    }
+    span:last-child {
+        border-left: 5px solid white;
+        font-weight: 600;
+        font-size: 1.3rem;
+    }
+
+    @media screen and (max-width: $desktop-large) {
+        span:first-child {
+            font-size: 0.6rem;
+        }
+        span:last-child {
+            font-size: 1rem;
+        }
+        span {
+            padding: 15px;
+        }
+    }
+}
+.wrapper-content {
+    padding: 1.2em;
+
+    .content__ {
+        &info {
+            color: $card-info;
+            font-family: "OpenSans";
+            font-weight: 600;
+            font-size: $fs-info-xl;
+
+            span:nth-child(2n) {
+                padding-left: 5px;
+            }
+            span:nth-child(2) {
+                padding-right: 10px;
+            }
+            .icon-ic_comment {
+                position: relative;
+                top: 2px;
+            }
+        }
+        &title {
+            font-family: "Montserrat";
+            font-weight: bold;
+            font-size: $fs-title-xl;
+            color: $title-color;
+        }
+        &descr {
+            font-family: "OpenSans";
+            font-weight: 400;
+            font-size: $fs-descr-xl;
+            color: $card-descr;
+        }
+
+        @media screen and (max-width: $desktop-large) {
+            &info {
+                font-size: $fs-info-sm;
+            }
+
+            &title {
+                font-size: $fs-title-sm;
+            }
+
+            &descr {
+                font-size: $fs-descr-sm;
+            }
+        }
+    }
+}

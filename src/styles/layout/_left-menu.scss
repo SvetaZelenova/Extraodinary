@@ -1,0 +1,100 @@
+aside {
+    height: calc(100% - #{$header-height-xxl});
+    top: $header-height-xxl;
+    position: fixed;
+    left: 0;
+    background-color: $aside-bg;
+    border-right: $aside-border;
+    z-index: 1;
+
+    nav {
+        height: 100%;
+    }
+
+    @media screen and (max-width: $desktop-large) {
+        height: calc(100% - #{$header-height-xl});
+        top: $header-height-xl;
+    }
+}
+
+.categories-menu {
+    height: 100%;
+
+    ul.nav {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.categories-item {
+    width: 9vh;
+    height: 9vh;
+    border-bottom: $aside-border;
+    position: relative;
+
+    a {
+        line-height: 9vh;
+        text-align: center;
+    }
+
+    &:before {
+        font-family: "Montserrat";
+        font-weight: bold;
+        font-size: $fs-links;
+        text-transform: uppercase;
+        padding-left: 9vh;
+        padding-right: 2vh;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 9vh;
+        position: absolute;
+        transform: scaleX(0);
+        transform-origin: left;
+        box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
+        transition: transform 300ms ease-in-out;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        color: white;
+        content: attr(data-content);
+    }
+    [class^="icon-ic_"]::before {
+        transition: color 300ms ease-in-out;
+        font-size: 1.2rem;
+    }
+
+    &:hover {
+        &:before {
+            transform: scaleX(1);
+        }
+
+        [class^="icon-ic_"]::before {
+            color: white;
+        }
+    }
+
+    &:last-child {
+        margin-top: auto;
+        border-top: $aside-border;
+        border-bottom: $aside-border;
+    }
+    @media screen and (min-height: 800px) and (max-width: $desktop-large) {
+        width: 6vh;
+        height: 6vh;
+
+        a {
+            line-height: 6vh;
+        }
+
+        &:before {
+            padding-left: 6vh;
+            line-height: 6vh;
+        }
+    }
+    @media screen and (max-width: $desktop-large) {
+        [class^="icon-ic_"]::before {
+            font-size: 1rem;
+        }
+    }
+}

@@ -1,0 +1,69 @@
+// Colors
+$header-bg: #232323;
+$header-color: #525252;
+$aside-bg: #fbfbfb;
+$palette: #14b9d6;
+$music: #e76049;
+$camera: #2eb398;
+$video: #90899c;
+$business: #5692b1;
+$airplane: #f9b704;
+$fashion: #dd1787;
+$plus: #e76049;
+$settings: #585858;
+$card-info: #9d9d9d;
+$title-color: #313131;
+$card-descr: #626262;
+
+$facebook: #3360b2;
+$twitter: #08b0e0;
+$google: #ef5c5c;
+$pinterest: #ae0a0a;
+
+$modal-bg: #00aeef;
+$modal-btn: #17ad60;
+
+//Borders
+$aside-border: 1px solid #e7e7e7;
+$header-border: 1px solid #2d2e2e;
+$card-border: 1px solid #ebebeb;
+
+// Font size
+$fs-links: 0.8rem;
+$fs-descr-xl: 1.2rem;
+$fs-descr-sm: 1rem;
+$fs-title-xl: 1.5rem;
+$fs-title-sm: 1.2rem;
+$fs-info-xl: 0.9rem;
+$fs-info-sm: 0.7rem;
+
+$header-height-xxl: 78px;
+$header-height-xl: 68px;
+//Icons
+$icons: (
+    "palette": $palette,
+    "music": $music,
+    "camera": $camera,
+    "video": $video,
+    "suitcase": $business,
+    "airplane": $airplane,
+    "bag": $fashion,
+    "plus": $plus,
+    "cog": $plus,
+    "comment": $card-info,
+    "calendar": $card-info,
+    "contact-us": $header-color,
+    "search": $header-color,
+    "user": $header-color,
+    "facebook": $facebook,
+    "twitter": $twitter,
+    "google": $google,
+    "pinterest": $pinterest
+);
+
+// Media queries
+$mobile-portrait: 600px;
+$mobile-landscape: 768px;
+$tablet: 992px;
+$desktop: 1200px;
+$desktop-large: 1400px
