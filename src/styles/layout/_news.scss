@@ -1,10 +1,13 @@
 main {
-    margin-left: 9vh;
+    margin-left: 7vh;
     margin-top: $header-height-xxl;
     padding: 1rem;
 
+    @media screen and (max-width: $desktop-large) {
+        margin-left: 60px;
+    }
     @media screen and (min-height: 800px) and (max-width: $desktop-large) {
-        margin-left: 6vh;
+        margin-left: 5vh;
     }
     @media screen and (max-width: $desktop-large) {
         margin-top: $header-height-xl;
