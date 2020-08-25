@@ -199,6 +199,7 @@ main {
             font-weight: 400;
             font-size: $fs-descr-xl;
             color: $card-descr;
+            line-height: 1.5rem;
         }
 
         @media screen and (max-width: $desktop-large) {
