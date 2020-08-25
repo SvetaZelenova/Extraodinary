@@ -1,5 +1,5 @@
 aside {
-    height: calc(100% - #{$header-height-xxl});
+    bottom: 0;
     top: $header-height-xxl;
     position: fixed;
     left: 0;
@@ -12,8 +12,10 @@ aside {
     }
 
     @media screen and (max-width: $desktop-large) {
-        height: calc(100% - #{$header-height-xl});
         top: $header-height-xl;
+    }
+    @media screen and (max-width: $mobile-landscape) {
+        overflow-y: scroll;
     }
 }
 
@@ -95,6 +97,22 @@ aside {
     @media screen and (max-width: $desktop-large) {
         [class^="icon-ic_"]::before {
             font-size: 1rem;
+        }
+    }
+
+    @media screen and (max-width: $mobile-landscape) {
+        width: 60px;
+        height: 60px;
+
+        a {
+            line-height: 60px;
+        }
+
+        &:before {
+            content: " ";
+            padding-left: 60px;
+            padding-right: 0;
+            line-height: 60px;
         }
     }
 }
